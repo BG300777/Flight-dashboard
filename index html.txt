@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages Deployment Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            margin-bottom: 25px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            font-size: 32px;
+            margin-right: 15px;
+            color: #0066cc;
+        }
+        
+        h1 {
+            color: #0066cc;
+            font-size: 32px;
+        }
+        
+        .content {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+        
+        .guide {
+            flex: 2;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .troubleshooting {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .step {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background: #0066cc;
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .step-content {
+            flex: 1;
+        }
+        
+        .step-content h3 {
+            margin-bottom: 8px;
+            color: #333;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            font-family: monospace;
+            margin: 12px 0;
+            overflow-x: auto;
+            line-height: 1.5;
+        }
+        
+        .tip {
+            background: #fff8e6;
+            border-left: 4px solid #d69e02;
+            padding: 12px 15px;
+            margin: 12px 0;
+            border-radius: 4px;
+        }
+        
+        .warning {
+            background: #ffe6e6;
+            border-left: 4px solid #c53030;
+            padding: 12px 15px;
+            margin: 12px 0;
+            border-radius: 4px;
+        }
+        
+        .success {
+            background: #e6f7ee;
+            border-left: 4px solid #0c6b3f;
+            padding: 12px 15px;
+            margin: 12px 0;
+            border-radius: 4px;
+        }
+        
+        .screenshot {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 12px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .github-link {
+            display: inline-flex;
+            align-items: center;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background 0.3s;
+            font-weight: 600;
+        }
+        
+        .github-link:hover {
+            background: #555;
+        }
+        
+        .github-icon {
+            margin-right: 10px;
+        }
+        
+        .checklist {
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+        
+        .checklist li {
+            margin-bottom: 8px;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #0066cc;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 900px) {
+            .content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div class="logo-icon"><i class="fab fa-github"></i></div>
+                <h1>GitHub Pages Deployment Guide</h1>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="guide">
+                <h2><i class="fas fa-map-signs"></i> Step-by-Step Deployment Guide</h2>
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Create a GitHub Account</h3>
+                        <p>If you don't have one, go to <a href="https://github.com/" target="_blank">github.com</a> and sign up for a free account.</p>
+                        <div class="tip">
+                            <strong>Tip:</strong> Choose a username that will be part of your site's URL: username.github.io
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Create a New Repository</h3>
+                        <p>Click on the "+" icon in the top right and select "New repository".</p>
+                        <div class="code-block">
+                            Repository name: <span style="color: #ff79c6">your-username</span>.github.io<br>
+                            Description: My Flight Dashboard<br>
+                            Public: ✓<br>
+                            Initialize this repository with a README: ✓
+                        </div>
+                        <div class="tip">
+                            <strong>Important:</strong> You MUST name the repository exactly as your username followed by ".github.io" for it to work automatically.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Upload Your HTML File</h3>
+                        <p>In your repository, click "Add file" → "Upload files".</p>
+                        <p>Drag and drop your HTML file or choose it from your computer.</p>
+                        <div class="code-block">
+                            # Name your file index.html to make it the default page<br>
+                            # Commit changes directly to the main branch
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Enable GitHub Pages</h3>
+                        <p>Go to Settings → Pages → Source.</p>
+                        <p>Select "Deploy from a branch" and then choose "main" branch and "/ (root)" folder.</p>
+                        <div class="tip">
+                            <strong>Note:</strong> It may take a few minutes for GitHub to build and publish your site.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Access Your Live Site</h3>
+                        <p>Your dashboard will be available at:</p>
+                        <div class="code-block">
+                            https://<span style="color: #ff79c6">your-username</span>.github.io/
+                        </div>
+                        <p>It may take 1-5 minutes to become available after you enable GitHub Pages.</p>
+                        <div class="success">
+                            <strong>Success:</strong> Once you see a green checkmark in your GitHub Pages settings, your site is live!
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="https://github.com/" class="github-link" target="_blank">
+                    <span class="github-icon"><i class="fab fa-github"></i></span>
+                    Go to GitHub
+                </a>
+            </div>
+            
+            <div class="troubleshooting">
+                <h2><i class="fas fa-tools"></i> Troubleshooting</h2>
+                
+                <div class="warning">
+                    <strong>Common Issues:</strong> If you can't see your dashboard, check these common problems.
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">1. Repository naming issue</div>
+                    <p>Your repository must be named exactly: <strong>username.github.io</strong> (replace "username" with your actual GitHub username).</p>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">2. Wrong branch or folder</div>
+                    <p>In Settings → Pages, make sure you've selected:<br>
+                    - Source: Deploy from a branch<br>
+                    - Branch: main (with root folder)</p>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">3. File not named index.html</div>
+                    <p>Your main HTML file should be named <strong>index.html</strong> to be served as the default page.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">4. Waiting for deployment</div>
+                    <p>GitHub Pages can take 1-5 minutes to deploy after you make changes. Check the "Actions" tab in your repository to see if deployment is in progress.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">5. Browser cache issue</div>
+                    <p>Try hard refreshing your page (Ctrl+F5 or Cmd+Shift+R) to bypass the cache, or try opening your site in an incognito window.</p>
+                </div>
+                
+                <h3 style="margin-top: 25px;">Checklist for Success</h3>
+                <ul class="checklist">
+                    <li><input type="checkbox"> Repository named username.github.io</li>
+                    <li><input type="checkbox"> HTML file named index.html</li>
+                    <li><input type="checkbox"> GitHub Pages enabled in settings</li>
+                    <li><input type="checkbox"> Main branch selected as source</li>
+                    <li><input type="checkbox"> Green checkmark in Pages settings</li>
+                    <li><input type="checkbox"> Waited at least 2 minutes after setup</li>
+                </ul>
+                
+                <div class="tip">
+                    <strong>Still having issues?</strong> Visit <a href="https://docs.github.com/en/pages" target="_blank">GitHub Pages documentation</a> for more help.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple checklist functionality
+        document.querySelectorAll('.checklist input').forEach(checkbox => {
+            checkbox.addEventListener('click', function() {
+                if (this.checked) {
+                    this.parentElement.style.textDecoration = 'line-through';
+                    this.parentElement.style.color = '#0c6b3f';
+                } else {
+                    this.parentElement.style.textDecoration = 'none';
+                    this.parentElement.style.color = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
